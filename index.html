@@ -71,16 +71,24 @@
             align-items: center;
             justify-content: center;
             background-color: var(--bg-light);
-            background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(BG.avif); 
+            background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.5)), url(BG.avif); 
             background-size: cover;
             background-position: center;
         }
 
-        .hero-content {
+         .hero-content {
             max-width: 800px;
             padding: 2rem;
-            text-align: left; /* Modern look, or use center */
+            text-align: left; 
         }
+
+        .hero-top-row {
+            display: flex;
+            align-items: flex-start; /* Aligns top of image with top of text */
+            gap: 2rem;               /* Space between image and text */
+            margin-bottom: 2rem;     /* Space before the quote box */
+        }
+
 
         .hero-text-main {
             font-size: 1.5rem;
@@ -95,17 +103,17 @@
             border-left: 4px solid var(--accent);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
+            margin-top: 0; /* Reset top margin if any */
+            width: 100%;   /* Force full width */
         }
 
         .quote-box p {color: var(--text-gray); }
 
         .home-image-left {
-            width: 247px;              /* Adjust size as needed */
+            width: 247px;              
             height: 313px;
-            border-radius: 0%;        /* Optional: Makes it round like offer images */
             object-fit: cover;
-            margin-right: 2rem;        /* Space between image and text */
-            float: left;               /* Puts image to the left of text */
+            flex-shrink: 0;            /* Prevents image from squishing */
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         
@@ -298,6 +306,20 @@
             .course-list { columns: 1; }
             .hero-content { text-align: center; }
             .quote-box { text-align: left; }
+			
+			.hero-top-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+			
+            .home-image-left {
+                width: 247px;         
+                height: 313px;        
+                margin-bottom: 0;     
+                border-bottom: 5px solid var(--accent);
+            }
         }
     </style>
 </head>
@@ -321,11 +343,12 @@
     <!-- Domů Section -->
     <section id="home">
         <div class="hero-content container">
-            <!-- ADD IMAGE HERE -->
+		    <div class="hero-top-row">
             <img src="petka.avif" class="home-image-left" alt="Petra Detersová">
             <p class="hero-text-main">
                 Nabízím osobní nebo online setká(vá)ní při psychických potížích, náročných životních obdobích, problémech ve vztazích, pocitech smutku, strachu, osamělosti, úzkostech, rozhodování a dalším.
             </p>
+			</div>
 
             <div class="quote-box">
                 <p>
@@ -394,7 +417,7 @@
                 </ul>
 
                 <h3>Absolvované kurzy</h3>
-                <ul class="course-list education-list">
+                <ul class="education-list">
                     <li>2023, Dalet. Kids skills: Přístup zaměřený na řešení.</li>
                     <li>2021, ATC. Feuersteinova metoda instrumentálního obohacování (FIE).</li>
                     <li>2021, Ostravská univerzita. Podpora zapojení otců.</li>
