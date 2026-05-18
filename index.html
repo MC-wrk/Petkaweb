@@ -72,7 +72,7 @@
             justify-content: center;
             background-color: var(--bg-light);
             /* REPLACE THE URL BELOW WITH YOUR MAIN HERO IMAGE */
-            background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
+            background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(BG.avif); 
             background-size: cover;
             background-position: center;
         }
@@ -84,7 +84,7 @@
         }
 
         .hero-text-main {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 300;
             margin-bottom: 2rem;
             color: var(--text-dark);
@@ -98,7 +98,7 @@
             margin-bottom: 2rem;
         }
 
-        .quote-box p { font-style: italic; color: var(--text-gray); }
+        .quote-box p {color: var(--text-gray); }
 
         /* --- SECTIONS GENERAL --- */
         section { padding: 5rem 1.5rem; }
@@ -142,7 +142,16 @@
         }
         .offer-card:hover { transform: translateY(-5px); }
         .offer-card h3 { color: var(--primary); margin-bottom: 1rem; }
-
+       
+	   .offer-card img {
+            width: 150px;              /* Sets a fixed size so they match */
+            height: 150px;             /* Sets a fixed size */
+            border-radius: 50%;        /* Makes them perfectly round */
+            object-fit: cover;         /* Ensures image doesn't stretch/distort */
+            margin: 0 auto 1.5rem auto; /* Centers the image horizontally */
+            display: block;            /* Removes default inline spacing */
+        }
+		
         /* --- O MNĚ (Layout with Image Left/Right) --- */
         #about { background-color: var(--bg-light); }
 
@@ -302,11 +311,15 @@
 
             <div class="quote-box">
                 <p>
-                    Věřím, že naše mysl je to nejdůležitější, co máme, a měli bychom s ní být zadobře. Ovlivňuje všechny aspekty našeho života: naše tělo, emoce, duchovno. Věřím, že realitu tvoříme svými myšlenkami a slovy. Věřím také, že vztahy jsou základem všeho. Jak se vztahujeme ke světu a k druhým, je klíčové. Všichni jsme v neustálém dialogu se vším ostatním, proto také "řešení" musíme vždy hledat ve vztahu k něčemu, k někomu.
+                    Věřím, že naše mysl je to nejdůležitější, co máme, a měli bychom s ní být zadobře. Ovlivňuje všechny aspekty našeho života: naše tělo, emoce, duchovno. Věřím, že realitu tvoříme svými myšlenkami a slovy.
                 </p>
+				<br>
+				<p>
+                   Věřím také, že vztahy jsou základem všeho. Jak se vztahujeme ke světu a k druhým, je klíčové. Všichni jsme v neustálém dialogu se vším ostatním, proto také "řešení" musíme vždy hledat ve vztahu k něčemu, k někomu.
+				</p>	
                 <br>
                 <p>
-                    Také věřím, že odpovědi máme každý v sobě. Jen je někdy neslyšíme, nevidíme, to když jsme zaplaveni trápením nebo z jakéhokoliv důvodu zranitelní. Tehdy může pomoci, když nás někdo pozorně poslouchá a ty odpovědi nám pomůže znovu objevit.
+                   Odpovědi máme každý v sobě. Jen je někdy neslyšíme, nevidíme, to když jsme zaplaveni trápením nebo z jakéhokoliv důvodu zranitelní. Tehdy může pomoci, když nás někdo pozorně poslouchá a ty odpovědi nám pomůže znovu objevit.
                 </p>
             </div>
         </div>
@@ -316,27 +329,31 @@
     <section id="offer">
         <div class="container">
             <h2>Nabídka</h2>
-            <p>Psychologické poradenství nabízí bezpečný a důvěrný prostor pro otevřený rozhovor o tom, co právě prožíváte. Může pomoct lépe porozumět vlastním myšlenkám, emocím a vztahům a hledat nové způsoby, jak zvládat náročné životní situace. Podporuje duševní pohodu, osobní zdroje a hledání cest k rovnováze a spokojenosti v životě.</p>
-            <div class="offer-grid">
+            <p>Psychologické poradenství nabízí bezpečný a důvěrný prostor pro otevřený rozhovor o tom, co prožíváte. Může pomoci lépe porozumět vlastním myšlenkám, emocím a vztahům a hledat nové způsoby, jak zvládat náročné životní situace. Podporuje duševní pohodu, osobní zdroje a hledání cest k rovnováze a spokojenosti v životě.</p>
+            </BR><p>Všechny konzultace mohou probíhat v češtině, slovenštině nebo angličtině. Objednat se můžete na e-mailu <a href="mailto:deters.petra@gmail.com" style="color:blue">deters.petra@gmail.com</a> nebo telefonu +420 723 132 347.</p></BR>    
+			<div class="offer-grid">
                 <div class="offer-card">
-                    <h3>Individuální setkání</h3>
-                    <h3>1200 Kč</h3>
-                    <p>Pracuji v Brně na adrese Gorkého 44 , v prostorách centra Jógamatka.</p>
-                    <p>Možnost bezplatně zrušit setkání máte 24 h předem, později účtuji polovinu částky. Při změně na online setkání zůstává cena stejná jako za setkání osobní.</p>
+                    <img src="inperson.avif">
+					<h3>Individuální setkání</h3>
+                    <h4>1200 Kč</h3>
+                    </BR><p>Pracuji v Brně na adrese Gorkého 44 , v prostorách centra Jógamatka.</p>
+                    </BR><p>Možnost bezplatně zrušit setkání máte 24 h předem, později účtuji polovinu částky. Při změně na online setkání zůstává cena stejná jako za setkání osobní.</p>
                 </div>
                 <div class="offer-card">
+				    <img src="online.avif">
                     <h3>Online setkání</h3>
-                    <h3>1000 Kč</h3>
-                    <p>Umožní nám setkat se, i když to nejde osobně. Předem vám zašlu odkaz k připojení.</p>
-                    <p>Je dobré zajistit si klidné prostředí, kde vás nebude nikdo rušit ani poslouchat. Je třeba spolehlivé připojení k internetu a vyzkoušená kamera a mikrofon. </p>
+                    <h4>1000 Kč</h3>
+                    </BR><p>Umožní nám setkat se, i když to nejde osobně. Předem vám zašlu odkaz k připojení.</p>
+                    </BR><p>Je dobré zajistit si klidné prostředí, kde vás nebude nikdo rušit ani poslouchat. Je třeba spolehlivé připojení k internetu a vyzkoušená kamera a mikrofon. </p>
                 </div>
                 <div class="offer-card">
+				    <img src="mail.avif">
                     <h3>E-mailová poradna</h3>
-                    <h3>750 Kč</h3>
-                    <p>Upřednostňujete-li možnost poslat dotaz jako do online poradny, můžete mi napsat.</p>
-                    <p>Tato forma se hodí, pokud potřebujete nasměřovat. Nehodí se ve stavu krize a nenahrazuje osobní setkání. Prosím, aby byl dotaz na 1 až 2 stránky. Odpověď zašlu do 3 pracovních dnů.  ​</p>
+                    <h4>750 Kč</h3>
+                    </BR><p>Upřednostňujete-li možnost poslat dotaz jako do online poradny, můžete mi napsat.</p>
+                    </BR><p>Tato forma se hodí, pokud potřebujete nasměřovat. Nehodí se ve stavu krize a nenahrazuje osobní setkání. Prosím, aby byl dotaz na 1 až 2 stránky. Odpověď zašlu do 3 pracovních dnů.  ​</p>
                 </div>
-            <p>Všechny konzultace mohou probíhat v českém, slovenském nebo anglickém jazyce.</p>    
+            
             </div>
         </div>
     </section>
@@ -352,6 +369,7 @@
             <div class="about-text">
                 <h3>Čemu věřím, jak pracuji</h3>
                 <p>Největší inspirací pro mě jsou dlouhodobě postmoderní přístupy, zejména dialogický a kolaborativní, částečně i ty na řešení zaměřené. Kladou totiž důraz na takzvané "neexpertství", tedy na důležitost vlastní zkušenosti a sebepoznání klienta.</p>
+				<BR>
                 <p>Vy jste tedy expertem na svůj život, já to plně respektuji (nedávám rady, nespravuji vás, nehodnotím) a já na chvíli vašim doprovodem, který se zvídavě ptá, naslouchá. Společně tak můžeme objevit možnosti a zdroje ke zlepšení, které nemusí být na první pohled vidět. Důležitou součástí je i práce s dalšími hlasy (pro vás důležitými lidmi, ať už jsou skutečně přítomni nebo ne), tady mě inspiruje systemická škola.</p>
 
                 <h3>Moje vzdělání</h3>
@@ -418,7 +436,7 @@
     <!-- Kontakt Section -->
     <section id="contact">
         <div class="container">
-            <h2>Kontaktujte mě</h2>
+            <h2>Napište mi zprávu</h2>
             <form class="contact-form" action="mailto:petra.deters@gmail.com" method="post" enctype="text/plain">
                 <input type="text" name="name" placeholder="Jméno" required>
                 <input type="email" name="email" placeholder="Email" required>
@@ -429,10 +447,12 @@
     </section>
 
     <footer>
-        <p>&copy; 2023 Petra Detersová. Všechna práva vyhrazena.</p>
-        <p>Kontakt: Mgr. Petra Detersová, Studio Jógamatka, Gorkého 44, Brno</p>
+        <H1>Kontakt</H1>
+		<p>Mgr. Petra Detersová, Studio Jógamatka, Gorkého 44, Brno</p>
         <p>deters.petra@gmail.com, +420 723 132 347</p>
         <p>Fakturační údaje: IČ 11834951</p>
+		<BR>
+		<p>&copy; 2023 Petra Detersová. Všechna práva vyhrazena.</p>
     </footer>
 
     <script>
