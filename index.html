@@ -71,7 +71,6 @@
             align-items: center;
             justify-content: center;
             background-color: var(--bg-light);
-            /* REPLACE THE URL BELOW WITH YOUR MAIN HERO IMAGE */
             background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(BG.avif); 
             background-size: cover;
             background-position: center;
@@ -99,6 +98,23 @@
         }
 
         .quote-box p {color: var(--text-gray); }
+
+        .home-image-left {
+            width: 247px;              /* Adjust size as needed */
+            height: 313px;
+            border-radius: 0%;        /* Optional: Makes it round like offer images */
+            object-fit: cover;
+            margin-right: 2rem;        /* Space between image and text */
+            float: left;               /* Puts image to the left of text */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Clearfix to ensure container expands correctly */
+        .hero-content::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
 
         /* --- SECTIONS GENERAL --- */
         section { padding: 5rem 1.5rem; }
@@ -155,9 +171,9 @@
         /* --- O MNĚ (Layout with Image Left/Right) --- */
         #about { background-color: var(--bg-light); }
 
-        .about-layout {
+         .about-layout {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
+            grid-template-columns: 1fr; /* Changed to 1fr to make it full width */
             gap: 3rem;
             align-items: start;
         }
@@ -305,6 +321,8 @@
     <!-- Domů Section -->
     <section id="home">
         <div class="hero-content container">
+            <!-- ADD IMAGE HERE -->
+            <img src="petka.avif" class="home-image-left" alt="Petra Detersová">
             <p class="hero-text-main">
                 Nabízím osobní nebo online setká(vá)ní při psychických potížích, náročných životních obdobích, problémech ve vztazích, pocitech smutku, strachu, osamělosti, úzkostech, rozhodování a dalším.
             </p>
@@ -359,12 +377,8 @@
     </section>
 
     <!-- O mně Section -->
-    <section id="about">
-        <div class="container about-layout">
-            <!-- Replace src with your actual photo file path -->
-            <div class="about-img-wrapper">
-                <img src="petka.avif" alt="Petra Detersová">
-            </div>
+<section id="about">
+    <div style="max-width: var(--max-width); margin: 0 auto;" class="about-layout"> 
 
             <div class="about-text">
                 <h3>Čemu věřím, jak pracuji</h3>
