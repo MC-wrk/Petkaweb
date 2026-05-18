@@ -7,249 +7,272 @@
     <style>
         /* --- RESET & VARIABLES --- */
         :root {
-            --primary-color: #2c7a7b; /* Teal/Greenish Blue */
-            --secondary-color: #f7fafc; /* Light Grey/Blue background */
-            --text-dark: #2d3748;
-            --text-light: #718096;
-            --white: #ffffff;
-            --max-width: 1100px;
+            --primary: #4A5D68; /* Muted Slate Blue */
+            --accent: #D4A373;  /* Warm Earth Tone */
+            --bg-light: #F9F9F9;
+            --text-dark: #2C2C2C;
+            --text-gray: #555555;
+            --white: #FFFFFF;
+            --max-width: 1000px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: var(--text-dark);
+            line-height: 1.6;
             background-color: var(--white);
         }
 
+        img { max-width: 100%; display: block; height: auto; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
-        img { max-width: 100%; display: block; }
 
         /* --- NAVIGATION --- */
         header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--primary);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--accent); }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
 
-        /* Mobile Menu Button (Hidden on Desktop) */
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            background: linear-gradient(rgba(44, 122, 123, 0.1), rgba(44, 122, 123, 0.1)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 90vh; /* Almost full screen */
+        /* --- HERO SECTION (DOMŮ) --- */
+        #home {
+            padding-top: 120px; /* Space for fixed header */
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 0 1rem;
-            margin-top: 60px; /* Offset for fixed header */
+            background-color: var(--bg-light);
+            /* REPLACE THE URL BELOW WITH YOUR MAIN HERO IMAGE */
+            background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-content {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 3rem;
-            border-radius: 8px;
-            max-width: 700px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 800px;
+            padding: 2rem;
+            text-align: left; /* Modern look, or use center */
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .hero-text-main {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
             color: var(--text-dark);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-light);
+        .quote-box {
+            background: var(--white);
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
         }
 
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: bold;
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: var(--primary-color);
-        }
+        .quote-box p { font-style: italic; color: var(--text-gray); }
 
         /* --- SECTIONS GENERAL --- */
-        section {
-            padding: 5rem 2rem;
-        }
-
+        section { padding: 5rem 1.5rem; }
+        
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
         }
 
-        .section-title {
-            text-align: center;
+        h2 {
             font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            margin: 10px auto 0;
         }
 
-        /* --- ABOUT SECTION --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-
-        /* --- SERVICES SECTION --- */
-        .services-bg {
-            background-color: var(--secondary-color);
-        }
-
-        .services-grid {
+        /* --- NABÍDKA --- */
+        #offer { background-color: var(--white); }
+        
+        .offer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .service-card {
-            background: var(--white);
+        .offer-card {
+            background: var(--bg-light);
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .offer-card:hover { transform: translateY(-5px); }
+        .offer-card h3 { color: var(--primary); margin-bottom: 1rem; }
+
+        /* --- O MNĚ (Layout with Image Left/Right) --- */
+        #about { background-color: var(--bg-light); }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-img-wrapper {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .about-img-wrapper img {
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        .about-text h3:first-child { margin-top: 0; }
+
+        .education-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .education-list li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .course-list {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            columns: 2; /* Two column layout for courses */
+            column-gap: 2rem;
+        }
+
+        /* --- FAQ --- */
+        #faq { background-color: var(--white); }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        .faq-answer { color: var(--text-gray); }
+
+        /* --- KONTAKT --- */
+        #contact {
+            background-color: var(--primary);
+            color: var(--white);
             text-align: center;
-            transition: transform 0.3s ease;
         }
+        #contact h2 { color: var(--white); }
+        #contact h2::after { background: var(--white); }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        /* --- CONTACT SECTION --- */
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            text-align: left;
         }
-
+        
         input, textarea {
+            width: 100%;
             padding: 1rem;
-            border: 1px solid #cbd5e0;
-            border-radius: 5px;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 4px;
             font-family: inherit;
         }
-
-        textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--text-dark);
+        
+        button {
+            background: var(--accent);
             color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        button:hover { background: #bfa38a; }
+
+        footer {
+            background: #2c3e46;
+            color: #aaa;
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
+            font-size: 0.8rem;
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES --- */
+        /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Hide menu on mobile initially */
+                display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 70px;
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background: var(--white);
-                text-align: center;
-                padding: 1rem 0;
+                padding: 1rem;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
             
-            .hero-content {
-                padding: 2rem 1rem;
-            }
+            .about-layout { grid-template-columns: 1fr; }
+            .about-img-wrapper { position: static; margin-bottom: 2rem; }
+            .course-list { columns: 1; }
+            .hero-content { text-align: center; }
+            .quote-box { text-align: left; }
         }
     </style>
 </head>
@@ -262,103 +285,146 @@
             <div class="menu-toggle" id="mobile-menu">☰</div>
             <ul class="nav-links">
                 <li><a href="#home">Domů</a></li>
+                <li><a href="#offer">Nabídka</a></li>
                 <li><a href="#about">O mně</a></li>
-                <li><a href="#services">Služby</a></li>
+                <li><a href="#faq">Časté dotazy</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Vítejte na mé webové stránce</h1>
-            <p>Komplexní poradenství pro váš osobní i profesní rozvoj.</p>
-            <a href="#contact" class="btn">Objednat se na konzultaci</a>
+    <!-- Domů Section -->
+    <section id="home">
+        <div class="hero-content container">
+            <p class="hero-text-main">
+                Nabízím osobní nebo online setká(vá)ní při psychických potížích, náročných životních obdobích, problémech ve vztazích, pocitech smutku, strachu, osamělosti, úzkostech, rozhodování a dalším.
+            </p>
+
+            <div class="quote-box">
+                <p>
+                    Věřím, že naše mysl je to nejdůležitější, co máme, a měli bychom s ní být zadobře. Ovlivňuje všechny aspekty našeho života: naše tělo, emoce, duchovno. Věřím, že realitu tvoříme svými myšlenkami a slovy. Věřím také, že vztahy jsou základem všeho. Jak se vztahujeme ke světu a k druhým, je klíčové. Všichni jsme v neustálém dialogu se vším ostatním, proto také "řešení" musíme vždy hledat ve vztahu k něčemu, k někomu.
+                </p>
+                <br>
+                <p>
+                    Také věřím, že odpovědi máme každý v sobě. Jen je někdy neslyšíme, nevidíme, to když jsme zaplaveni trápením nebo z jakéhokoliv důvodu zranitelní. Tehdy může pomoci, když nás někdo pozorně poslouchá a ty odpovědi nám pomůže znovu objevit.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Nabídka Section -->
+    <section id="offer">
+        <div class="container">
+            <h2>Nabídka</h2>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <h3>Individuální poradenství</h3>
+                    <p>Osobní nebo online setkání zaměřené na vaše specifické potřeby.</p>
+                </div>
+                <div class="offer-card">
+                    <h3>Konzultace pro rodiny</h3>
+                    <p>Práce s více členy najednou – rodinné konflikty a dynamika.</p>
+                </div>
+                <div class="offer-card">
+                    <h3>Workshopy</h3>
+                    <p>Zaměřeno na stress management, psychohygienu a rozvoj dovedností.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O mně Section -->
     <section id="about">
-        <div class="container">
-            <h2 class="section-title">O mně</h2>
-            <div class="about-grid">
-                <div class="about-img">
-                    <!-- Placeholder image - replace with your own photo later -->
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Petra Dětřichová">
-                </div>
-                <div class="about-text">
-                    <h3>Jsem Petra Dětřichová</h3>
-                    <br>
-                    <p>Vítám vás. Jsem certifikovaná poradkyně s dlouholetou praxí v oblasti lidských zdrojů a osobního rozvoje. Pomáhám lidem najít rovnováhu mezi prací a životem a dosáhnout jejich plného potenciálu.</p>
-                    <br>
-                    <p>Mým cílem je vytvořit bezpečný prostor, kde si můžete jasně ujasnit své cíle a najít praktická řešení pro vaše výzvy.</p>
-                </div>
+        <div class="container about-layout">
+            <!-- Replace src with your actual photo file path -->
+            <div class="about-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Petra Dětřichová">
+            </div>
+
+            <div class="about-text">
+                <h3>Čemu věřím, jak pracuji</h3>
+                <p>Největší inspirací pro mě jsou dlouhodobě postmoderní přístupy, zejména dialogický a kolaborativní, částečně i ty na řešení zaměřené. Kladou totiž důraz na takzvané "neexpertství", tedy na důležitost vlastní zkušenosti a sebepoznání klienta.</p>
+                <p>Vy jste tedy expertem na svůj život, já to plně respektuji (nedávám rady, nespravuji vás, nehodnotím) a já na chvíli vašim doprovodem, který se zvídavě ptá, naslouchá. Společně tak můžeme objevit možnosti a zdroje ke zlepšení, které nemusí být na první pohled vidět. Důležitou součástí je i práce s dalšími hlasy (pro vás důležitými lidmi, ať už jsou skutečně přítomni nebo ne), tady mě inspiruje systemická škola.</p>
+
+                <h3>Moje vzdělání</h3>
+                <ul class="education-list">
+                    <li><strong>Psychologie, Mgr.</strong> (2014): Masarykova univerzita, Fakulta sociálních studií</li>
+                    <li><strong>Psychologie, digitální média, žurnalistika, Bc.</strong> (2011): tamtéž</li>
+                    <li><strong>Filmová scenáristika a dramaturgie, Bc.</strong> (2009): Akadémia umení v Banskej Bystrici</li>
+                </ul>
+
+                <h3>Absolvované kurzy</h3>
+                <ul class="course-list education-list">
+                    <li>2023, Dalet. Kids skills: Přístup zaměřený na řešení.</li>
+                    <li>2021, ATC. Feuersteinova metoda instrumentálního obohacování (FIE).</li>
+                    <li>2021, Ostravská univerzita. Podpora zapojení otců.</li>
+                    <li>2021, Tudytam. Práce s emocemi v sociálních službách.</li>
+                    <li>2021, Inštitút dialogických praxí. Výcvik v multidisciplinárním přístupu.</li>
+                    <li>2020, Spondea. Dítě v centru.</li>
+                    <li>2019, R. Šimáček. Sportovní masáž.</li>
+                    <li>2016 a dále. Workshopy spolku Narativ (Harlene Anderson, Peter Rober, atd.).</li>
+                </ul>
+
+                <h3>Praxe</h3>
+                <p>Má profesní dráha se po studiích vinula přes ne zcela plánované odvětví personalistiky (administrátorka, recruiterka, generalistka), terénní sociální práci v rodinách v krizi s malými dětmi a koordinaci dobrovolnic (HoSt Home-Start ČR, 2019-2022) až po poradenskou práci individuální nebo ve dvojici (s rodinami, s týmem pracovníků ve službách, s klienty služeb). Každá z těchto pracovních příležitostí mi dala možnost mluvit a pracovat s rozmanitými lidmi z různých odvětví a seznámit se s jejich potřebami.</p>
+
+                <h3>Další profesní aktivity</h3>
+                <ul class="education-list">
+                    <li>Přispívám texty na web <strong>Psychologie.cz</strong> (vztahy, dialog, závislost, motivace).</li>
+                    <li>Od roku 2024 lektoruji workshopy pro studenty SŠ (stress management, psychohygiena).</li>
+                    <li>2022: Koordinace projektu Ministerstva zdravotnictví (Reforma péče o duševní zdraví).</li>
+                    <li>2019-2021: Vedla kurz Sociálně-psychologický výcvik pro studenty MU.</li>
+                    <li>Od 2014: Členkou spolku Narativ.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-bg">
+    <!-- Časté dotazy Section -->
+    <section id="faq">
         <div class="container">
-            <h2 class="section-title">Moje Služby</h2>
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-icon">👥</div>
-                    <h3>Kariérní poradenství</h3>
-                    <p>Pomoc při hledání nové práce, změně kariéry nebo postupu ve stávající pozici. Příprava na pohovory a optimalizace životopisu.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3>Osobní rozvoj</h3>
-                    <p>Konzultace zaměřené na sebepoznání, budování sebevědomí a práci s limity, které vás brzdí v růstu.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-icon">⚖️</div>
-                    <h3>Balance Work-Life</h3>
-                    <p>Naučte se efektivně řídit svůj čas a energii, abyste předešli vyhoření a žili vyrovnaný život.</p>
-                </div>
+            <h2>Časté dotazy</h2>
+            <div class="faq-item">
+                <div class="faq-question">Jak probíhá první setkání?</div>
+                <div class="faq-answer">První schůzka slouží k tomu, abychom si řekli, co vás trápí, a abyste zjistili, zda vám můj styl práce vyhovuje. Je to prostor pro vzájemné poznání bez tlaku na okamžité řešení.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Lze konzultace absolvovat online?</div>
+                <div class="faq-answer">Ano, nabízím jak osobní setkání, tak konzultace přes Zoom/Skype/Google Meet.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Jak dlouhé jsou jednotlivá sezení?</div>
+                <div class="faq-answer">Standardní konzultace trvá obvykle 60 minut.</div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Kontakt Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Kontaktujte mě</h2>
-            <div class="contact-form">
-                <form action="mailto:vas-email@priklad.cz" method="post" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Vaše jméno" required>
-                    <input type="email" name="email" placeholder="Váš email" required>
-                    <textarea name="message" placeholder="Zpráva..."></textarea>
-                    <button type="submit" class="btn">Odeslat zprávu</button>
-                </form>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <p><strong>Email:</strong> info@petradetersova.cz</p>
-                    <p><strong>Telefon:</strong> +420 123 456 789</p>
-                </div>
-            </div>
+            <h2>Kontaktujte mě</h2>
+            <form class="contact-form" action="mailto:vas-email@priklad.cz" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Jméno" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Vaše zpráva..." rows="5" required></textarea>
+                <button type="submit">Odeslat</button>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2023 Petra Dětřichová. Všechna práva vyhrazena.</p>
     </footer>
 
-    <!-- JavaScript for Mobile Menu -->
     <script>
-        const mobileMenu = document.getElementById('mobile-menu');
+        const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.nav-links');
 
-        mobileMenu.addEventListener('click', () => {
+        menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
+        // Close menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
