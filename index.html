@@ -18,7 +18,7 @@
     
     <!-- Open Graph (For better sharing on Facebook/LinkedIn) -->
     <meta property="og:title" content="Psychologické poradenství Brno | Mgr. Petra Detersová">
-    <meta property="og:description" content="Psychologická pomoc pro váš osobní i profesní rozvoj. Osobní i online setkání.">
+    <meta property="og:description" content="Psychologická pomoc, osobní i online setkání.">
     <meta property="og:image" content="petka.avif"> <!-- Ensure this image file is in your folder -->
     <meta property="og:url" content="https://petradetersova.cz"> <!-- Replace with your actual GitHub URL later -->
     <meta property="og:type" content="website">
@@ -79,7 +79,7 @@
             color: var(--primary);
         }
 
-        .nav-links { display: flex; gap: 2rem; }
+        .nav-links { display: flex; gap: 1.35rem; }
         .nav-links a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
         .nav-links a:hover { color: var(--accent); }
 
@@ -93,7 +93,7 @@
             align-items: center;
             justify-content: center;
             background-color: var(--bg-light);
-            background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.6)), url(BG.avif); 
+            background-image: linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.7)), url(BG.jpg); 
             background-size: cover;
             background-position: center;
         }
@@ -113,9 +113,10 @@
 
 
         .hero-text-main {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             font-weight: 300;
             margin-bottom: 2rem;
+			margin-top: 2rem;
             color: var(--text-dark);
         }
 
@@ -306,7 +307,48 @@
             }
         }
     </style>
+
+    <!-- SCHEMA MARKUP FOR LOCAL BUSINESS -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Mgr. Petra Detersová - Psychologické poradenství",
+      "image": "https://petradetersova.cz/petka.avif",
+      "description": "Psychologické poradenství v Brně. Specializace na úzkosti, vztahy, stres a životní krize.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gorkého 44",
+        "addressLocality": "Brno",
+        "postalCode": "602 00",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.19951, 
+        "longitude": 16.59402
+      },
+      "url": "https://petradetersova.cz",
+      "telephone": "+420723132347",
+      "priceRange": "1000-1200 CZK",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+      ]
+    }
+    </script>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -320,6 +362,7 @@
                 <li><a href="#about">O mně</a></li>
                 <li><a href="#faq">Časté dotazy</a></li>
                 <li><a href="#footer">Kontakt</a></li>
+				<li><a href="index_en.html"><img src="EN.png" style="width:24px;height:24px"></a></li>
             </ul>
         </nav>
     </header>
