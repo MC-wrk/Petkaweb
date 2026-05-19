@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Title: Include Name + Service + Location -->
+    <title>Psychologické poradenství Brno | Mgr. Petra Detersová</title>
+    
+    <!-- SEO Description: A compelling summary for search results (max ~160 chars) -->
+    <meta name="description" content="Psychologické poradenství v Brně. Pomoc při úzkostech, depresích, potížích ve vztazích a životních krizích. Osobní i online konzultace s Mgr. Petrou Detersovou.">
+    
+    <!-- Keywords (Optional, but good for context) -->
+    <meta name="keywords" content="psycholog brno, psycholog, psychoterapie, poradenství, úzkosti, deprese, vztahy, Mgr. Petra Detersová, Detersová, online terapie">
+    
+    <!-- Author -->
+    <meta name="author" content="Petra Detersová">
+    
+    <!-- Open Graph (For better sharing on Facebook/LinkedIn) -->
+    <meta property="og:title" content="Psychologické poradenství Brno | Mgr. Petra Detersová">
+    <meta property="og:description" content="Psychologická pomoc, osobní i online setkání.">
+    <meta property="og:image" content="petka.avif"> <!-- Ensure this image file is in your folder -->
+    <meta property="og:url" content="https://petradetersova.cz"> <!-- Replace with your actual GitHub URL later -->
+    <meta property="og:type" content="website">
+
+    <!-- Canonical URL (Prevents duplicate content issues) -->
+    <link rel="canonical" href="https://petradetersova.cz">
+	
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary: #4A5D68; /* Muted Slate Blue */
+            --accent: #D4A373;  /* Warm Earth Tone */
+            --bg-light: #F9F9F9;
+            --text-dark: #2C2C2C;
+            --text-gray: #555555;
+            --white: #FFFFFF;
+            --max-width: 1000px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .nav-links { display: flex; gap: 1.35rem; }
+        .nav-links a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--accent); }
+
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* --- HERO SECTION (DOMŮ) --- */
+        #home {
+            padding-top: 120px; /* Space for fixed header */
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-light);
+            background-image: linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.7)), url(BG.jpg); 
+            background-size: cover;
+            background-position: center;
+        }
+
+         .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: left; 
+        }
+
+        .hero-top-row {
+            display: flex;
+            align-items: flex-start; /* Aligns top of image with top of text */
+            gap: 2rem;               /* Space between image and text */
+            margin-bottom: 2rem;     /* Space before the quote box */
+        }
+
+
+        .hero-text-main {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+			margin-top: 2rem;
+            color: var(--text-dark);
+        }
+
+        .quote-box {
+            background: var(--white);
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            margin-top: 0; /* Reset top margin if any */
+            width: 100%;   /* Force full width */
+        }
+
+        .quote-box p {color: var(--text-gray); }
+
+        .home-image-left {
+            width: 200px;              
+            height: 240px;
+            object-fit: cover;
+            flex-shrink: 0;            /* Prevents image from squishing */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Clearfix to ensure container expands correctly */
+        .hero-content::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        section { padding: 5rem 1.5rem; }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        /* --- NABÍDKA --- */
+        #offer { background-color: var(--white); }
+        
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .offer-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .offer-card:hover { transform: translateY(-5px); }
+        .offer-card h3 { color: var(--primary); margin-bottom: 1rem; }
+       
+	   .offer-card img {
+            width: 150px;              /* Sets a fixed size so they match */
+            height: 150px;             /* Sets a fixed size */
+            border-radius: 50%;        /* Makes them perfectly round */
+            object-fit: cover;         /* Ensures image doesn't stretch/distort */
+            margin: 0 auto 1.5rem auto; /* Centers the image horizontally */
+            display: block;            /* Removes default inline spacing */
+        }
+		
+        /* --- O MNĚ (Layout with Image Left/Right) --- */
+        #about { background-color: var(--bg-light); }
+
+         .about-layout {
+            display: grid;
+            grid-template-columns: 1fr; /* Changed to 1fr to make it full width */
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-img-wrapper {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .about-img-wrapper img {
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        .about-text h3:first-child { margin-top: 0; }
+
+        .education-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .education-list li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .course-list {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            columns: 2; /* Two column layout for courses */
+            column-gap: 2rem;
+        }
+
+        /* --- FAQ --- */
+        #faq { background-color: var(--white); }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        .faq-answer { color: var(--text-gray); }
+
+        footer {
+            background: #2c3e46;
+            color: #aaa;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            
+            .about-layout { grid-template-columns: 1fr; }
+            .about-img-wrapper { position: static; margin-bottom: 2rem; }
+            .course-list { columns: 1; }
+            .hero-content { text-align: center; }
+            .quote-box { text-align: left; }
+			
+			.hero-top-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+			
+            .home-image-left {
+                width: 200px;         
+                height: 240px;        
+                margin-bottom: 0;     
+            }
+        }
+    </style>
+	
+	    <!-- SCHEMA MARKUP FOR LOCAL BUSINESS -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Mgr. Petra Detersová - Psychologické poradenství",
+      "image": "https://petradetersova.cz/petka.avif",
+      "description": "Psychologické poradenství v Brně. Specializace na úzkosti, vztahy, stres a životní krize.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gorkého 44",
+        "addressLocality": "Brno",
+        "postalCode": "602 00",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.19951, 
+        "longitude": 16.59402
+      },
+      "url": "https://petradetersova.cz",
+      "telephone": "+420723132347",
+      "priceRange": "1000-1200 CZK",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+      ]
+    }
+    </script>
+	
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Petra Detersová<p style="font-size:0.58em">psychological counselling</p></div>
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#offer">Services</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#footer">Contact</a></li>
+				<li><a href="index.html"><img src="CZ.png" style="width:24px;height:24px"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Domů Section -->
+    <section id="home">
+        <div class="hero-content container">
+		    <div class="hero-top-row">
+            <img src="petka.avif" class="home-image-left" alt="Petra Detersová, psycholožka v Brně">
+            <p class="hero-text-main">
+				Welcome. <BR><BR>
+				I offer in-person or online sessions for people experiencing psychological difficulties, challenging life periods, relationship problems, feelings of sadness, fear, loneliness, anxiety, difficulties with decision-making, and other concerns.
+            </p>
+			</div>
+
+            <div class="quote-box">
+                <H3>What principles do I rely on in my work</H3><BR>
+				<p>
+                    I believe that our mind is the most important thing we have, and that we should strive to be at peace with it. It influences every aspect of our lives: our body, our emotions, and our spiritual life. I believe that we shape our reality through our thoughts and words.
+                </p>
+				<br>
+				<p>
+                   I also believe that relationships are the foundation of everything. How we relate to the world and to other people is essential. We are all in a constant dialogue with everything around us, and therefore any “solution” must always be sought in relation to something or someone.
+				</p>	
+                <br>
+                <p>
+                   Each of us already carries the answers within ourselves. Sometimes we simply cannot hear or see them—especially when we are overwhelmed by distress or feel vulnerable for any reason. In such moments, it can help when someone listens to us with full attention and helps us rediscover those answers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nabídka Section -->
+    <section id="offer">
+        <div class="container">
+            <h2>Services offered</h2>
+            <p>Psychological counseling offers a safe and confidential space for an open conversation about what you are currently experiencing. It can help you better understand your thoughts, emotions, and relationships, and explore new ways of coping with challenging life situations. It supports mental well-being, personal resources, and the search for balance and fulfillment in life.</p>
+           	</BR><p>You can make an appointment via email <a href="mailto:deters.petra@gmail.com" style="color:blue">deters.petra@gmail.com</a> or by phone +420 723 132 347.</p>
+			</BR><p>All consultations can be conducted in Czech, Slovak, or English. If your financial situation prevents you from booking a session, please contact me so we can discuss possible arrangements.</p></BR>
+			<div class="offer-grid">
+                <div class="offer-card">
+                    <img src="inperson.avif" alt="In-person session at the Jógamatka Brno center">
+					<h3>Individual session</h3>
+                    <h4>1200 Kč</h3>
+                    </BR><p>I work in Brno at the address Gorkého 44, in the premises of the Jógamatka Center.</p>
+                    </BR><p>Appointments can be cancelled free of charge up to 24 hours in advance. Later cancellations are charged 50% of the session fee. If a session is changed to an online meeting, the price remains the same as for an in-person session.</p>
+                </div>
+                <div class="offer-card">
+				    <img src="online.avif" alt="Online psychological counselling">
+                    <h3>Online session</h3>
+                    <h4>1000 Kč</h3>
+                    </BR><p>It allows us to meet even when an in-person session is not possible. I will send you a link to join the meeting in advance.</p>
+                    </BR><p>It is best to ensure a quiet and private environment where you will not be disturbed or overheard. You will also need a reliable internet connection and a working camera and microphone.</p>
+                </div>
+                <div class="offer-card">
+				    <img src="mail.avif" alt="E-mailová poradna pro rychlé dotazy">
+                    <h3>E-mail consultation</h3>
+                    <h4>750 Kč</h3>
+                    </BR><p>If you prefer the option of sending a question in the form of an online consultation, you can write to me.</p>
+                    </BR><p>This format is suitable if you need guidance or direction. It is not appropriate in a crisis situation and does not replace an in-person session. Please keep your question to 1–2 pages. I will send my response within 3 working days.​</p>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- About me Section -->
+<section id="about">
+    <div style="max-width: var(--max-width); margin: 0 auto;" class="about-layout"> 
+
+            <div class="about-text">
+			    <h2>About me: Education and experience</h2>
+                <h3>How do I work</h3>
+                <p>My greatest inspiration has long been postmodern approaches, especially dialogical and collaborative approaches, and to some extent also solution-focused approaches. They emphasize so-called “non-expertism,” meaning the importance of the client’s own experience and self-understanding.</p>
+				<BR>
+                <p>You are the expert on your own life, and I fully respect that (I do not give advice, try to “fix” you, or judge you). My role is to accompany you for a while — to ask curious questions and to listen. Together, we can discover possibilities and resources for change and improvement that may not be visible at first glance. An important part of the process is also working with other voices (people who are important to you, whether they are physically present or not). In this, I am inspired by the systemic approach.</p>
+
+                <h3>My education</h3>
+                <ul class="education-list">
+                    <li><strong>Psychology, Mgr.</strong> (2014): Masaryk university, Faculty of social studies</li>
+                    <li><strong>Psychology, digital media, journalism, Bc.</strong> (2011): Masaryk university, Faculty of social studies</li>
+                    <li><strong>Film screenwriting a dramaturgy, Bc.</strong> (2009): Academy of Arts, Banská Bystrica</li>
+                </ul>
+
+                <h3>Completed Courses</h3>
+<ul class="education-list">
+    <li>2023, 48 h, Dalet. Kids Skills: A solution-focused approach as a method of social work with children, parents, and the community.</li>
+    <li>2021​, 80 h, ATC. Feuerstein Instrumental Enrichment Method – accredited program Reuven Feuerstein’s Method for the Development of Cognitive Functions I. An educational program focused on the development of thinking, learning, and cognitive functions in both children and adults.</li>
+    <li>2021, 40 h, University of Ostrava, Faculty of Social Studies. Educational course within the project Development of tools to support the involvement of fathers in social activation services for families with children and their pilot implementation in practice.</li>
+    <li>2021, 16 h, Tudytam. Working with emotions in social services.</li>
+    <li>2021, Institute of Dialogical Practices, Catholic University of Ružomberok, and Narativ Association Brno. Pilot year-long training in a multidisciplinary approach to supporting families and children in difficult situations.</li>
+    <li>2020, 24 h, Spondea. The Child at the Center. Application of a comprehensive approach in working with divorcing parents and their children.</li>
+    <li>2019, 150 h, R. Šimáček, Brno. Sports massage – certificate of professional qualification, accredited educational program accredited by the Ministry of Education, Youth and Sports.</li>
+    <li>2016 onwards. Workshops of the Narativ association with lecturers Harlene Anderson, Peter Rober, Jaakko Seikkula, Jim Wilson, John Shotter, Justine van Lawick, Werner Schutze, Chris Kinman, Silvia London, Will Hall, Ben Furman, Loek Schoenmakers, Rocío Chaveste, Eija Liisa-Rautiainen, Mark Hopfenbeck, and others.</li>
+</ul>
+
+                <h3>Experience</h3>
+                <p>My professional career, after completing my studies, has developed through an initially unplanned field of human resources (as an HR administrator, recruiter, and generalist), field social work with families in crisis with young children, and coordination of volunteers (HoSt Home-Start Czech Republic, 2019–2022), and later into counselling work both individually and in pairs (with families, with teams of service workers, and with clients of services).</p><BR>
+				 <p>Each of these job opportunities has given me the chance to talk and work with diverse people from different fields and to become familiar with their needs.</p>
+
+                <h3>Other professional activities</h3>
+                <ul class="education-list">
+                    <li>​For many years I have contributed my texts to the website <a href=https://psychologie.cz/clanky/?category=&tag=&author=petra-detersova&video=&search=><b>Psychologie.cz</b></a>. So far, I have focused on topics such as relationships, dialogue, addiction, inner balance, motivation, and many others.</li>
+<li>Since 2024 I have been leading workshops for secondary school students focused on stress management, psychohygiene, presentation skills, stage fright, and burnout (within the Association for the Support of Talented Youth).</li>
+<li>In 2022 I coordinated a project of the Ministry of Health within the Mental Health Care Reform (Supporting the implementation of a multidisciplinary approach to people with mental illness: Openness and a dialogical approach).</li>
+<li>In 2019–2021 I led a course in socio-psychological training for psychology students at the Faculty of Social Studies, Masaryk University, focused on group work with students.</li>
+<li>Since 2014 I have been a member of the Narativ association, which focuses on the development and dissemination of postmodern approaches in therapy, education, and other fields, especially dialogical and collaborative approaches.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently asked questions Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">How can I book an appointment?</div>
+                <div class="faq-answer">You can contact me by phone. If I am unable to answer, I will call you back. I also welcome SMS messages or emails and try to respond as quickly as possible; however, it is best if you leave your phone number so I can reach you easily. Appointments are currently (spring 2026) available within two weeks, and the exact time during the day can be arranged individually.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">​How long does a session last?</div>
+                <div class="faq-answer">A standard session lasts 50–55 minutes. The first session is often slightly longer.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">​Is a psychologist the right choice for me?</div>
+                <div class="faq-answer">The first meeting serves as an opportunity for us to get to know each other and to see whether our cooperation would be helpful for you. We will also clarify what we could work on together. You can then decide whether you would like to schedule another session immediately or contact me later.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I change or cancel an appointment?</div>
+                <div class="faq-answer">If you cannot attend or join the session online, please let me know as soon as possible, so that I can offer the slot to someone else and find another suitable time for you. If a consultation is cancelled less than 24 hours in advance, I charge 50% of the session fee.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What about confidentiality, ethics, and GDPR?</div>
+                <div class="faq-answer">I follow the Code of Ethics of the Czech-Moravian Psychological Society. This means that I maintain strict confidentiality regarding all information shared during our conversations. Exceptions apply only in cases required by law—specifically the reporting obligation under § 367 and § 368 of the Criminal Code (for example, a criminal act or an immediate threat to health or life), a court order, or your written consent to waive confidentiality. Notes from our sessions are kept in my records in paper form, without your full name. Your personal information (such as your name, email address, or phone number) is stored separately from session notes and is used only to contact you regarding the scheduling of appointments.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <H1>Contact</H1>
+		<H3>Mgr. Petra Detersová, Jógamatka studio, Gorkého St 44, Brno</H3>
+        <H3><a href=mailto:deters.petra@gmail.com>deters.petra@gmail.com</a>, +420 723 132 347</h3>
+        <H3>Billing information: IČ 11834951</H3>
+		<BR>
+		<p>&copy; 2026 Petra Detersová. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
