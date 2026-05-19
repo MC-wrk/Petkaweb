@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://petradetersova.cz/sitemap.xml
