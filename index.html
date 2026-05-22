@@ -101,7 +101,7 @@
 
         /* --- HERO SECTION (DOMŮ) --- */
         #home {
-            padding-top: 120px; /* Space for fixed header */
+            padding-top: 100px; /* Space for fixed header */
             min-height: 90vh;
             display: flex;
             align-items: center;
@@ -304,20 +304,35 @@
             .about-layout { grid-template-columns: 1fr; }
             .about-img-wrapper { position: static; margin-bottom: 2rem; }
             .course-list { columns: 1; }
-            .hero-content { text-align: center; }
-            .quote-box { text-align: left; }
-			
-			.hero-top-row {
+
+            /* CHANGE 1: Remove max-width restriction on mobile */
+            .hero-content { 
+                text-align: center; 
+                max-width: none;      /* Allows full width */
+                width: 100%;          /* Forces full width */
+                padding: 0.5rem;        /* Keeps some space from edges */
+            }
+
+            /* CHANGE 2: Ensure the box takes up all available space */
+            .quote-box { 
+                text-align: left; 
+                width: 100%;          
+                max-width: 100%;      
+                padding: 1rem;      
+                box-sizing: border-box;
+            }
+
+            .hero-top-row {
                 flex-direction: column;
                 align-items: center;
-                gap: 1.5rem;
-                margin-bottom: 2rem;
+                gap: 0rem;
+                margin-bottom: 0.5rem;
             }
-			
+
             .home-image-left {
                 width: 200px;         
                 height: 240px;        
-                margin-bottom: 0;     
+                margin-bottom: 0.5rem;     
             }
         }
     </style>
@@ -415,7 +430,12 @@
         <div class="container">
             <h2>Nabídka poradenství</h2>
             <p>Psychologické poradenství nabízí bezpečný a důvěrný prostor pro otevřený rozhovor o tom, co prožíváte. Může pomoci lépe porozumět vlastním myšlenkám, emocím a vztahům a hledat nové způsoby, jak zvládat náročné životní situace. Podporuje duševní pohodu, osobní zdroje a hledání cest k rovnováze a spokojenosti v životě.</p>
-           	</BR><p>Objednat se můžete na e-mailu <a href="mailto:deters.petra@gmail.com" style="color:blue">deters.petra@gmail.com</a> nebo telefonu +420 723 132 347.</p>
+           	<BR><p><H4>Objednat se můžete:</h4>
+			<ul id="appointments">
+			<li>&#x2709; na e-mailu <a href="mailto:deters.petra@gmail.com" style="color:blue">deters.petra@gmail.com</a>
+			<li>&#9743; na telefonu +420 723 132 347
+			</ul>
+			</p>
 			</BR><p>Všechny konzultace mohou probíhat v češtině, slovenštině nebo angličtině.</p></BR>
 			<div class="offer-grid">
                 <div class="offer-card">
